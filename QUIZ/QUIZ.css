@@ -1,0 +1,82 @@
+body {
+    background-color: rgba(120, 194, 243, 0.555);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div {
+    background-color: white;
+}
+#questions {
+   margin-left: 100px;
+  
+}
+.bar {
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-bottom: 100px;
+   
+    padding: 20px;
+    float: left;
+    background-color: rgba(128, 128, 128, 0.202);
+}
+#headline {
+    width: 900px;
+    padding: 2%;
+    background-color: rgba(128, 128, 128, 0.202);
+}
+#answers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+    width: 1000px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 30px;
+    
+}
+#card {
+    width:445px;
+    padding:10px;
+    
+}
+#scoreboard {
+    background-color: white;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 800px;
+    
+   
+}
+#contain {
+    margin-bottom: 200px;
+    margin-left: 200px;
+    width: 1000px;
+    display: flex;
+    
+    justify-content:center;
+    flex-wrap: wrap;
+    
+}
+
+#nr {
+    width: 10px;
+   
+}
+tr {
+    background-color: rgba(128, 128, 128, 0.202); 
+    height: 50px;
+    width: 70px;
+}
+
+td {
+   padding-right: 20px;
+    
+}
+
+#e {
+    width: 100%;
+}
+
