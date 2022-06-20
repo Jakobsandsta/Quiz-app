@@ -6,9 +6,15 @@ let question_nr = 0;
 
 let questions = [];
 let max_nr = 100;
+let difficulty = "easy";
+window.onload = function Ask() {
+    max_nr = window.prompt("How many questions?");
+    difficulty = window.prompt("Hard, easy or medium difficulty?").toLowerCase();
+}
 async function d(i) {
+    
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount="+max_nr+"&category=9&difficulty=easy&type=multiple");
+        const response = await fetch("https://opentdb.com/api.php?amount="+max_nr+"&category=9&difficulty="+difficulty+"&type=multiple");
         const results = await response.json();
         
         questions = results.results;
@@ -37,6 +43,7 @@ function SetupNAVBAR(n) {
     if (n > 10) {
         
         navbar.removeChild(navbar.children[0]);
+        
     }
 }
 
@@ -93,7 +100,7 @@ function check_card_state(nr) {
         reset("rgba(4, 192, 4, 0.504)")
         
     } else if (answers[nr]["value"] === false) {
-        
+        alert("CORRECT: " + questions[question_nr]["correct_answer"],)
         reset("rgba(235, 49, 49, 0.589)")
     }
     
@@ -104,14 +111,15 @@ function check_card_state(nr) {
 
 function reset(bar_color) {
     
-    
+    navbar.children[navbar.children.length-1].style.backgroundColor = bar_color;
     question_nr += 1;
-    navbar.children[question_nr-1].style.backgroundColor = bar_color;
+    
     
     
 
     if (question_nr <= max_nr-1) {
         answers = [];
+       
         d(question_nr);
         
     } else {
